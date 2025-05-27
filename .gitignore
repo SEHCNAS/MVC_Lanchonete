@@ -1,0 +1,109 @@
+####################################
+## Build e publicação
+####################################
+bin/
+obj/
+publish/
+dist/
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+*.cache
+*.db
+*.log
+
+####################################
+## Configurações específicas do usuário
+####################################
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vspscc
+*.vssscc
+*.ncb
+*.psess
+*.vsp
+*.vspx
+*.vsmdi
+*.cachefile
+*.dbmdl
+*.bak
+*.tmp
+*.swp
+
+####################################
+## Visual Studio
+####################################
+.vs/
+.vscode/
+*.code-workspace
+
+####################################
+## Configurações de publicação (IIS)
+####################################
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+
+####################################
+## Configurações de pacotes
+####################################
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+####################################
+## Configurações do sistema operacional
+####################################
+Thumbs.db
+ehthumbs.db
+Icon?
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+*.sw?
+
+####################################
+## Node.js (se usar frontend moderno)
+####################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+####################################
+## Arquivos de configuração do app
+####################################
+appsettings.*.json
+!appsettings.json
+
+####################################
+## Arquivos de segurança
+####################################
+secrets.json
+.env
+.env.*
+*.cer
+*.pfx
+*.key
+
+####################################
+## Outras configurações opcionais
+####################################
+*.sql
+*.mdf
+*.ldf
+*.db
+*.sqlite

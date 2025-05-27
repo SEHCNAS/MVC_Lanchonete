@@ -1,0 +1,25 @@
+﻿Migrations - package manager console
+
+Criar migração 
+    add-migration NomeDaMigracao [Options]
+
+Aplicar  migração
+    update-database [Options]
+
+Remover migração
+    remove-migration [Options]
+
+
+Migrations - NET CLI
+
+Instalar a ferramenta
+    dotnet tool install --global dotnet-ef
+
+Criar migração 
+    dotnet ef migrations add NomeDaMigracao [Options]
+
+Aplicar  migração
+    dotnet ef database update [Options]
+
+Remover migração
+    dotnet ef migrations remove

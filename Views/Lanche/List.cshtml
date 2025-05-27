@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MVC.Models.Lanche>
+
+@{
+    ViewData["Title"] = "List";
+}      
+<div class="container">
+    <div class="row">
+@foreach (var item in Model) {
+   
+    <div class="col-sm-4 col-md-4 col-lg-4">
+
+                <P><img src="@item.LancheImagemThumb" class="img-thumbnail"></P>
+        <h4>@item.LancheNome</h4>
+        <p>@item.LancheDescricaoCurta</p>
+        <h3>Preço: @item.LanchePreco.ToString("c")</h3>
+     </div>
+
+      
+}
+    </div>
+</div>

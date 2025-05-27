@@ -1,0 +1,13 @@
+Gerenciando certificados auto assinados
+
+dotnet dev-certs https --trust
+Este comando instala o certificado de desenvolvimento HTTPS como confiável no sistema operacional (quando suportado).
+
+dotnet dev-certs https --clean
+Remove todos os certificados de desenvolvimento HTTPS gerados com dotnet dev-certs.
+
+dotnet dev-certs https --check
+Este comando verifica se existe um certificado HTTPS válido para desenvolvimento.
+
+dotnet dev-certs https
+Este comando cria um certificado de desenvolvimento HTTPS se ele ainda não existir.
