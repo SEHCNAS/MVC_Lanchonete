@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC.Repositories.Interfaces;
+using MVC.ViewModels;
 
 namespace MVC.Controllers
 {
@@ -23,28 +24,25 @@ namespace MVC.Controllers
 
         public IActionResult List()
         {
-            // <summary> 
-            // List action prepares the view data for displaying available Lanche items.
-            // It sets the title and current date in the ViewData dictionary.
-            // </summary>
-            ViewData["Titulo"] = "Lanches Disponíveis";
-            ViewData["Data"] = DateTime.Now;
 
             // <summary>
             // List action retrieves all Lanche items from the repository and returns them to the view.
             // </summary>
-            var lanches = _lancheRepository.Lanches;
-
-            // <summary>
-            // Sets the total number of Lanche items in the ViewBag for display in the view.
-            // </summary>
-            ViewBag.Total = "Total de lanches";
-            ViewBag.TotalLanches = lanches.Count();
+            //var lanches = _lancheRepository.Lanches;
 
             // <summary>
             // Returns the view with the list of Lanche items.
             // </summary>
-            return View(lanches);
+            //return View(lanches);
+
+            // <summary>
+            // Creates a LancheListViewModel with all Lanche items and a current category message.
+            // </summary>
+            var lancheListViewModel = new LancheListViewModel();
+            lancheListViewModel.Lanches = _lancheRepository.Lanches;
+            lancheListViewModel.CategoriaAtual = "Categoria Atual: Todos os Lanches";
+            return View(lancheListViewModel);
+
         }
     }
 }
