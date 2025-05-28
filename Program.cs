@@ -26,6 +26,12 @@ builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 // Registrando o repositório de categorias como um serviço
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
+builder.Services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
+
+builder.Services.AddMemoryCache();
+
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 
@@ -41,6 +47,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 
