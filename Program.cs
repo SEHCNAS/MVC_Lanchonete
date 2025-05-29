@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MVC.Context;
+using MVC.Models;
 using MVC.Repositories;
 using MVC.Repositories.Interfaces;
 
@@ -26,7 +27,10 @@ builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 // Registrando o repositório de categorias como um serviço
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
-builder.Services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
+// Registra um carrinho de compras como um serviço escopo, permitindo que ele seja injetado em controladores e outros serviços
+builder.Services.AddScoped(sp  => CarrinhoCompra.GetCarrinho(sp));
+builder.Services.AddHttpContextAccessor();
+//builder.Services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
 
 builder.Services.AddMemoryCache();
 
